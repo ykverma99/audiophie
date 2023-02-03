@@ -14,6 +14,7 @@ require("../models/UserSchema");
 require("../models/CatSchema");
 require("../models/ProductSchema");
 require("../models/CartSchema");
+require("../models/OrderSchema");
 
 // {
 //     useNewUrlParser: true,
