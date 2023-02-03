@@ -1,0 +1,34 @@
+@import '../mixins';
+@import '../variables';
+
+
+.input_container{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    width: 100%;
+
+    &__info{
+        display: flex;
+        justify-content: space-between;
+        padding: 5px 5px;
+        
+        &___label{
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 0.8px;
+        }
+        &___error{
+            color: rgb(196, 17, 17);
+        }
+    }
+    &__input{
+        width: 100%;
+        padding: 16px 10px;
+        border: 0.5px solid rgb(212, 212, 212);
+        border-radius: 7px;
+        outline: 0;
+
+        &:focus:hover{
+            outline: 1px solid $color;
+        }
+    }
+}

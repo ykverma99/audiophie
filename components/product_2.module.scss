@@ -1,0 +1,191 @@
+@import '../app/mixins';
+@import '../app/variables';
+
+.container{
+    // background-color: antiquewhite;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin: 40px 18px;
+    padding: 20px 0;
+    // width: 100vw;
+
+    @include devices(desktop){
+        flex-direction: row;
+        gap: 90px;
+        width: 100vw;
+        padding: 30px 0;
+    }
+
+    &__image{
+        position: relative;
+        height: 300px;
+        width: 100%;
+        @include devices(desktop){
+            width: 35%;
+            height: 500px;
+        }
+    }
+
+    &__content{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        text-align: start;
+        // gap: 22px;
+        color: black;
+
+        @include devices(desktop){
+            width: 34%;
+            gap: 30px;
+            justify-content: start;
+            align-items: flex-start;
+            text-align: start;
+        }
+
+        &___title{
+            letter-spacing: 7px;
+            font-size: 0.93rem;
+            color: $color;
+            @include devices(desktop){
+                letter-spacing: 9px;
+            }
+        }
+        &___heading{
+            font-size: 1.8rem;
+            font-weight: 500;
+            @include devices(desktop){
+                font-size: 2rem;
+                letter-spacing: 1.2px;
+                max-width: 250px;
+
+            }
+        }
+        &___para{
+            font-size: 0.9rem;
+            line-height: 26px;
+            color: rgb(151, 151, 151);
+            
+            @include devices(desktop){
+                color: rgb(151, 151, 151);
+                font-size: 1rem;
+                // letter-spacing: 1px;
+                word-spacing: 1px;
+                max-width: 480px;
+
+            }
+        }
+        &___price{
+            font-size: 1.3rem;
+            font-weight: 500;
+            letter-spacing: 0.8px;
+        }
+        &___buttons{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+    }
+}
+
+// cart button
+
+.cart{
+    background-color: rgba(231, 231, 231, 0.636);
+    width: 100px;
+    height: 36px;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+
+    &__btn{
+        height: 100%;
+        width: 33%;
+        background-color: inherit;
+        border: 0;
+        color: gray;
+        font-size: medium;
+        cursor: pointer;
+    }
+    &__value{
+        text-align: center;
+        font-size: large;
+        width: 33.5%;
+    }
+}
+
+// description section
+
+
+.desc{
+    display: flex;
+    flex-direction: column;
+    color: rgb(156, 154, 154);
+    justify-content: center;
+    margin: 40px 18px;
+    padding: 20px 0;
+    gap: 40px;
+    font-size: 0.9rem;
+
+
+    @include devices(desktop){
+        flex-direction: row;
+        justify-content: center;
+        gap: 80px;
+        margin: 90px 0;
+        padding: 0;
+
+    }
+    &__heading{
+        color: black;
+        font-size: 1.7rem;
+        font-weight: 500;
+        letter-spacing: 1px;
+        margin: 0 0 15px 0;
+        
+        @include devices(desktop){
+            margin: 0 0 20px 0;
+            font-size: 2rem;
+            font-weight: 600;
+        }
+    }
+
+    &__features{
+        @include devices(desktop){
+            width: 42%;
+        }
+        &___para{
+            line-height: 23px;
+            letter-spacing: 0.7px;
+            @include devices(desktop){
+                max-width: 95%;
+                line-height: 25px;
+            }
+        }
+    }
+    &__box{
+        @include devices(desktop){
+            width: 25%;
+        }
+        &___lists{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            &__listbox{
+                background-color: rebeccapurple;
+            }
+        }
+        &___lists > *{
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            font-size: 0.95rem;
+        }
+    }
+}

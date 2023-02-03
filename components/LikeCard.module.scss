@@ -1,0 +1,25 @@
+@import '../app/mixins';
+@import '../app/variables';
+
+.like_card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    &__image{
+        position: relative;
+        width: 315px;
+        height: 200px;
+        @include devices(desktop){
+            height: 300px;
+        }
+    }
+    &__content{
+        &___heading{
+            font-size: 1.7rem;
+            font-weight: 500;
+            margin-bottom: 14px;
+        }
+    }
+}

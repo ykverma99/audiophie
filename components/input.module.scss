@@ -1,0 +1,26 @@
+.inputbox{
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    position: relative;
+    &{
+        font-size: small;
+    }
+
+    &__input{
+        width: 280px;
+        padding: 9px;
+        border: 1px solid rgb(187, 185, 185);
+        border-radius: 4px;
+        outline: 0;
+        &:focus:hover{
+        outline: 2px solid #32a1ce;
+        }
+    }
+    &__icon{
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+        cursor: pointer;
+    }
+}

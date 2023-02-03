@@ -1,0 +1,31 @@
+@import '../app/mixins';
+@import '../app/variables';
+
+.cart{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: rgb(121, 118, 118);
+    margin: 15px 0;
+
+    &_product{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+
+        &__image{
+            position: relative;
+            height: 65px;
+            width: 65px;
+        }
+        &__info{
+            font-size: 1.1rem;
+            &___name{
+                font-weight: bold;
+                letter-spacing: 1px;
+                color: black;
+            }
+        }
+    }
+}

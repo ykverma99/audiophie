@@ -1,0 +1,17 @@
+@import '../app/mixins';
+
+.cardSection{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 90px;
+    margin: 8rem 0;
+    z-index: -10;
+    width: 100vw;
+
+    @include devices(desktop){
+        flex-direction: row;
+        gap: 30px;
+    }
+}

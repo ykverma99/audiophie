@@ -1,0 +1,166 @@
+@import '../app/mixins';
+@import '../app/variables';
+
+.container{
+    // background-color: antiquewhite;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin: 40px 18px;
+    padding: 20px 0;
+    // width: 100vw;
+
+    @include devices(desktop){
+        flex-direction: row;
+        gap: 90px;
+        width: 100vw;
+        padding: 30px 0;
+    }
+
+    &__image{
+        position: relative;
+        height: 300px;
+        width: 100%;
+        @include devices(desktop){
+            width: 35%;
+            height: 570px;
+        }
+    }
+
+    &__content{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        gap: 22px;
+        color: black;
+
+        @include devices(desktop){
+            width: 34%;
+            gap: 30px;
+            justify-content: start;
+            align-items: flex-start;
+            text-align: start;
+        }
+
+        &___title{
+            letter-spacing: 7px;
+            font-size: 0.93rem;
+            color: $color;
+            @include devices(desktop){
+                letter-spacing: 9px;
+            }
+        }
+        &___heading{
+            font-size: 1.8rem;
+            font-weight: 500;
+            @include devices(desktop){
+                font-size: 2rem;
+                letter-spacing: 1.2px;
+                max-width: 250px;
+
+            }
+        }
+        &___para{
+            font-size: 0.9rem;
+            line-height: 26px;
+            color: rgb(151, 151, 151);
+            
+            @include devices(desktop){
+                color: rgb(151, 151, 151);
+                font-size: 1rem;
+                // letter-spacing: 1px;
+                word-spacing: 1px;
+                max-width: 480px;
+
+            }
+        }
+    }
+}
+
+.container_reverse{
+    // background-color: antiquewhite;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin: 40px 18px;
+    padding: 20px 0;
+    // width:    100vw;
+
+    @include devices(desktop){
+        flex-direction: row-reverse;
+        gap: 50px;
+        width: 100vw;
+        padding: 30px 0;
+    }
+
+    &__image{
+        position: relative;
+        height: 300px;
+        width: 100%;
+        @include devices(desktop){
+            width: 35%;
+            height: 570px;
+        }
+    }
+
+    &__content{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        gap: 22px;
+        color: black;
+
+        @include devices(desktop){
+            gap: 30px;
+            width: 34%;
+            justify-content: start;
+            align-items: flex-start;
+            text-align: start;
+        }
+
+        &___title{
+            letter-spacing: 7px;
+            font-size: 0.93rem;
+            color: $color;
+            @include devices(desktop){
+                letter-spacing: 9px;
+            }
+        }
+        &___heading{
+            font-size: 1.8rem;
+            font-weight: 500;
+            @include devices(desktop){
+                font-size: 2rem;
+                max-width: 250px;
+                letter-spacing: 1.2px;
+            }
+        }
+        &___para{
+            font-size: 0.9rem;
+            line-height: 26px;
+            color: rgb(151, 151, 151);
+            
+            @include devices(desktop){
+                color: rgb(151, 151, 151);
+                font-size: 1rem;
+
+                // letter-spacing: 1.1px;
+                word-spacing: 1px;
+                max-width: 480px;
+
+            }
+        }
+    }
+}
+
+

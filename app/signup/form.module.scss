@@ -1,0 +1,78 @@
+@import '../variables';
+@import '../mixins';
+
+.container{
+    display: flex;
+    height: 88vh;
+    background-color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    &__image{
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        // height: 100%;
+        width: 50%;
+    }
+}
+
+.form_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    width: 50%;
+
+    &__form{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 16px;
+        padding: 30px;
+        width: 90%;
+        height: 90%;
+        border-radius: 20px;
+        background-color: white;
+        box-shadow: -3px 3px 20px rgb(196, 187, 187),4px -2px 20px $color;
+        
+        &___heading{
+            position: absolute;
+            top: 50px;
+            font-size: 2.2rem;
+            font-weight: 500;
+            left: 45px;
+        }
+
+        &___box{
+            display: flex;
+            gap: 32px;
+        }
+        &___error{
+            width: 94%;
+            color: red;
+        }
+        &___button{
+            width: 94%;
+            &____btn{
+                background-color: $color;
+                border: 0;
+                text-align: center;
+                color: white;
+                padding: 8px 26px;
+                margin: 10px 0;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+        }
+        &___account{
+            display: flex;
+            width: 92%;
+            gap: 3px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: rgb(106, 105, 105);
+        }
+    }
+}
