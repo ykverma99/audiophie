@@ -25,6 +25,27 @@
         }
     }
 
+    &__cart{
+        position: relative;
+        &___box{
+            cursor: pointer;
+            
+            &_notify{
+                position: absolute;
+                top: -8px;
+                right: -8px;
+                background-color: $color;
+                height: 18px;
+                width: 18px;
+                text-align: center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 50%;
+            }
+        }
+    }
+
     &__title___name{
         font-size: 28px;
         @include devices(tablet){

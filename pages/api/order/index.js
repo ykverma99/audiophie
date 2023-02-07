@@ -1,5 +1,6 @@
 import { ConnectDb } from "../../../DB/ConnectDb";
 import Order from "../../../models/OrderSchema";
+import Product from "../../../models/ProductSchema";
 
 export default async (req, res) => {
   await ConnectDb();
@@ -40,7 +41,6 @@ export default async (req, res) => {
         const order = await Order.find({})
           .populate({ path: "product", populate: { path: "productId" } })
           .exec();
-
         res.status(200).json({ data: order });
       } catch (error) {
         res.status(400).json({ error: error.message });

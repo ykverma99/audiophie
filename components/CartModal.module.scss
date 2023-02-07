@@ -1,0 +1,29 @@
+@import "../app/mixins";
+@import "../app/variables";
+
+.cart{
+    position: absolute;
+    top: 150%;
+    right: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 300px;
+    color: black;
+    background-color: white;
+    border-radius: 8px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+    &__heading{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &>p{
+            color: gray;
+            letter-spacing: 1px;
+            text-decoration: underline;
+        }
+    }
+}

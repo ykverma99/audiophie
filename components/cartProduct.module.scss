@@ -12,20 +12,45 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 20px;
+        gap: 10px;
 
         &__image{
             position: relative;
-            height: 65px;
-            width: 65px;
+            height: 60px;
+            width: 60px;
         }
         &__info{
-            font-size: 1.1rem;
+            font-size: 1rem;
             &___name{
                 font-weight: bold;
                 letter-spacing: 1px;
                 color: black;
             }
         }
+    }
+}
+
+
+.btn{
+    background-color: rgba(231, 231, 231, 0.636);
+    width: 80px;
+    height: 33px;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+
+    &__btn{
+        height: 100%;
+        width: 33%;
+        background-color: inherit;
+        border: 0;
+        color: gray;
+        font-size: medium;
+        cursor: pointer;
+    }
+    &__value{
+        text-align: center;
+        font-size: medium;
+        width: 33.5%;
     }
 }

@@ -10,6 +10,7 @@ import {
   AiOutlineMenuUnfold,
   AiOutlineShoppingCart,
 } from "react-icons/ai";
+import CartModal from "../components/CartModal";
 
 const Navbar = () => {
   const [toggleMenu, settoggleMenu] = useState(false);
@@ -60,7 +61,11 @@ const Navbar = () => {
         })}
       </ul>
       <div className={styles.header__cart}>
-        <AiOutlineShoppingCart size={22} />
+        <div className={styles.header__cart___box}>
+          <AiOutlineShoppingCart size={25} />
+          <small className={styles.header__cart___box_notify}>1</small>
+        </div>
+        <CartModal />
       </div>
       {/* Showing a  */}
       <div className={toggleMenu ? styles.header__lists : styles.header__hide}>

@@ -20,8 +20,12 @@ const CartProduct = () => {
         </div>
       </div>
       <div className={styles.cart_stock}>
-        <p>X1</p>
-        <div>{/* <button></button> */}</div>
+        {/* <p>X1</p> */}
+        <div className={styles.btn}>
+          <button className={styles.btn__btn}>-</button>
+          <span className={styles.btn__value}>{1}</span>
+          <button className={styles.btn__btn}>+</button>
+        </div>
       </div>
     </div>
   );

@@ -12,6 +12,11 @@ export default async (req, res) => {
             quantity: req.body.quantity,
           }
         );
+        if (productUpdate.quantity === 0) {
+          const deleteCart = await Cart.findByIdAndDelete({
+            _id: productUpdate._id,
+          });
+        }
         res.status(200).json({ message: "Your change is done" });
       } catch (error) {
         res.status(400).json({ message: error.message });

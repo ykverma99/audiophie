@@ -34,5 +34,13 @@ export default async (req, res) => {
       } catch (error) {
         res.status(400).json({ message: error.message });
       }
+
+    case "DELETE":
+      try {
+        const deleteProducts = await Cart.deleteMany({ quantity: { $gt: 0 } });
+        res.status(200).json({ message: "you delete all the data" });
+      } catch (error) {
+        res.status(400).json({ message: error.message });
+      }
   }
 };
