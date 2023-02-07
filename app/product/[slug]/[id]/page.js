@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
+import useSWR from "swr";
 import Product_2 from "../../../../components/Product_2";
 import styles from "./id.module.scss";
 import PhotoGallery from "../../../../components/PhotoGallery";
@@ -6,34 +8,43 @@ import CardSection from "../../../../components/CardSection";
 import AboutSection from "../../../../components/AboutSection";
 import LikeCard from "../../../../components/LikeCard";
 
-const getData = async (id) => {
-  const res = await fetch(`http://localhost:3000/api/product/${id}`);
-  if (!res.ok) {
-    throw new Error("Something is wrong");
-  }
+// const getData = async (id) => {
+//   const res = await fetch(`http://localhost:3000/api/product/${id}`);
+//   if (!res.ok) {
+//     throw new Error("Something is wrong");
+//   }
 
-  return res.json();
+//   return res.json();
+// };
+
+const fetcher = async (id) => {
+  const res = await fetch(`http://localhost:3000/api/product/${id}`);
+  const data = res.json();
+  return data;
 };
 
-const page = async ({ params }) => {
-  // const [count, setcount] = useState(1);
+const page = ({ params }) => {
   const id = params.id;
-  const { data } = await getData(id);
+  const [count, setcount] = useState(1);
+  const { data } = useSWR(id, fetcher);
 
-  // console.log(typeof window);
+  const getValue = (val) => {
+    setcount(val);
+  };
+  console.log(data?.data.images[0]);
 
   return (
     <div className={styles.container}>
       <Product_2
-        src={data.mainImg}
-        heading={data.name}
-        para={data.desc}
-        price={data.price}
-        about={data.about}
+        src={data?.data.mainImg}
+        heading={data?.data.name}
+        para={data?.data.desc}
+        price={data?.data.price}
+        about={data?.data.about}
         // subBtn={sub}
-        // value={checkValue}
+        value={getValue}
       >
-        {data.inBox.map((data) => {
+        {data?.data.inBox.map((data) => {
           return (
             <div key={data._id} className={styles.listbox}>
               <span className={styles.listbox__quantity}>{data.quantity}X</span>
@@ -43,9 +54,9 @@ const page = async ({ params }) => {
         })}
       </Product_2>
       <PhotoGallery
-        first={data.images[0]}
-        second={data.images[1]}
-        third={data.images[2]}
+        first={data?.data.images[0]}
+        second={data?.data.images[1]}
+        third={data?.data.images[2]}
       />
 
       {/* <div className={styles.like}>

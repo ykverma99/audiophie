@@ -13,25 +13,28 @@ const Product_2 = ({
   children,
   about,
   price,
+  value,
   // subBtn,
 }) => {
   const [count, setcount] = useState(1);
-  if (typeof window !== "undefined") {
-    localStorage.setItem("qunt", JSON.stringify(count));
-  }
+  // if (typeof window !== "undefined") {
+  //   localStorage.setItem("qunt", JSON.stringify(count));
+  // }
+  useEffect(() => {
+    value(count);
+  }, [count]);
   function add() {
-    // localStorage.removeItem("quantity");
+    // localStorage.removeItem("quant");
     setcount((prev) => prev + 1);
   }
   function sub() {
-    // localStorage.removeItem("quantity");
+    // localStorage.removeItem("quant");
     if (count <= 1) {
       setcount(1);
     } else {
       setcount((prev) => prev - 1);
     }
   }
-
   // console.log(count);
   return (
     <div>

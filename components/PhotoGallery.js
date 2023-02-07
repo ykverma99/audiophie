@@ -9,7 +9,7 @@ const PhotoGallery = ({ first, third, second }) => {
         <div className={styles.container__small___1}>
           <Image
             src={first}
-            alt={first}
+            alt={"first"}
             fill={true}
             style={{ objectFit: "cover", borderRadius: "8px" }}
           />
@@ -17,7 +17,7 @@ const PhotoGallery = ({ first, third, second }) => {
         <div className={styles.container__small___2}>
           <Image
             src={second}
-            alt={second}
+            alt={"second"}
             fill={true}
             style={{ objectFit: "cover", borderRadius: "8px" }}
           />
@@ -26,7 +26,7 @@ const PhotoGallery = ({ first, third, second }) => {
       <div className={styles.container__big}>
         <Image
           src={third}
-          alt={third}
+          alt={"third"}
           fill={true}
           style={{ objectFit: "cover", borderRadius: "8px" }}
         />
