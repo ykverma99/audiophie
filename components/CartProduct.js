@@ -2,7 +2,7 @@ import Image from "next/image";
 import React from "react";
 import styles from "./cartProduct.module.scss";
 
-const CartProduct = () => {
+const CartProduct = ({ btn }) => {
   return (
     <div className={styles.cart}>
       <div className={styles.cart_product}>
@@ -20,12 +20,15 @@ const CartProduct = () => {
         </div>
       </div>
       <div className={styles.cart_stock}>
-        {/* <p>X1</p> */}
-        <div className={styles.btn}>
-          <button className={styles.btn__btn}>-</button>
-          <span className={styles.btn__value}>{1}</span>
-          <button className={styles.btn__btn}>+</button>
-        </div>
+        {btn ? (
+          <p>X1</p>
+        ) : (
+          <div className={styles.btn}>
+            <button className={styles.btn__btn}>-</button>
+            <span className={styles.btn__value}>{1}</span>
+            <button className={styles.btn__btn}>+</button>
+          </div>
+        )}
       </div>
     </div>
   );

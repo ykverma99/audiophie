@@ -16,8 +16,11 @@ const getData = async (id) => {
 };
 
 const page = async ({ params }) => {
+  // const [count, setcount] = useState(1);
   const id = params.id;
   const { data } = await getData(id);
+
+  // console.log(typeof window);
 
   return (
     <div className={styles.container}>
@@ -27,6 +30,8 @@ const page = async ({ params }) => {
         para={data.desc}
         price={data.price}
         about={data.about}
+        // subBtn={sub}
+        // value={checkValue}
       >
         {data.inBox.map((data) => {
           return (
@@ -42,6 +47,7 @@ const page = async ({ params }) => {
         second={data.images[1]}
         third={data.images[2]}
       />
+
       {/* <div className={styles.like}>
         <h2 className={styles.like__heading}>YOU MAY ALSO LIKE</h2>
         <div className={styles.like__likeCard}>

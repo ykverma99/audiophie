@@ -3,6 +3,7 @@
 import React from "react";
 import styles from "./CartModal.module.scss";
 import CartProduct from "./CartProduct";
+import Button from "./Button";
 
 const CartModal = () => {
   return (
@@ -14,6 +15,11 @@ const CartModal = () => {
       <div>
         <CartProduct />
       </div>
+      <div className={styles.cart__price}>
+        <p className={styles.cart__price___total}>TOTAL</p>
+        <p className={styles.cart__price___money}>$2500</p>
+      </div>
+      <button className={styles.cart__btn}>CHECKOUT</button>
     </div>
   );
 };

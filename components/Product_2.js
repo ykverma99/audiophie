@@ -13,18 +13,26 @@ const Product_2 = ({
   children,
   about,
   price,
+  // subBtn,
 }) => {
   const [count, setcount] = useState(1);
+  if (typeof window !== "undefined") {
+    localStorage.setItem("qunt", JSON.stringify(count));
+  }
   function add() {
+    // localStorage.removeItem("quantity");
     setcount((prev) => prev + 1);
   }
   function sub() {
+    // localStorage.removeItem("quantity");
     if (count <= 1) {
       setcount(1);
     } else {
       setcount((prev) => prev - 1);
     }
   }
+
+  // console.log(count);
   return (
     <div>
       <motion.div

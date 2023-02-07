@@ -14,6 +14,7 @@ import CartModal from "../components/CartModal";
 
 const Navbar = () => {
   const [toggleMenu, settoggleMenu] = useState(false);
+  const [showCart, setshowCart] = useState(false);
   const router = usePathname();
   const links = [
     { name: "HOME", link: "/" },
@@ -61,11 +62,14 @@ const Navbar = () => {
         })}
       </ul>
       <div className={styles.header__cart}>
-        <div className={styles.header__cart___box}>
+        <div
+          className={styles.header__cart___box}
+          onClick={() => setshowCart((prev) => !prev)}
+        >
           <AiOutlineShoppingCart size={25} />
           <small className={styles.header__cart___box_notify}>1</small>
         </div>
-        <CartModal />
+        {showCart && <CartModal />}
       </div>
       {/* Showing a  */}
       <div className={toggleMenu ? styles.header__lists : styles.header__hide}>

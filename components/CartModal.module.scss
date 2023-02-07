@@ -4,16 +4,23 @@
 .cart{
     position: absolute;
     top: 150%;
-    right: 100%;
+    right: 50%;
     padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    gap: 10px;
     width: 300px;
     color: black;
     background-color: white;
     border-radius: 8px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    z-index: 1;
+    transition: all 0.5 cubic-bezier(0.23, 1, 0.320, 1);
+
+    @include devices(tablet){
+        width: 350px;
+    }
 
     &__heading{
         display: flex;
@@ -25,5 +32,38 @@
             letter-spacing: 1px;
             text-decoration: underline;
         }
+    }
+    &__price{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: gray;
+        font-size: 1.1rem;
+        padding: 5px 0;
+
+        @include devices(desktop){
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+            font-weight: 300;
+        }
+
+        &___money{
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: black;
+            @include devices(desktop){
+                font-size: 1.4rem;
+            }
+        }
+    }
+
+    &__btn{
+        color: white;
+        background-color: $color;
+        border: 0;
+        border-radius: 4px;
+        height: 40px;
+        margin: 5px 0;
+        cursor: pointer;
     }
 }
