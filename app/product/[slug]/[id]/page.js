@@ -31,7 +31,6 @@ const page = ({ params }) => {
   const getValue = (val) => {
     setcount(val);
   };
-  console.log(data?.data.images[0]);
 
   return (
     <div className={styles.container}>
