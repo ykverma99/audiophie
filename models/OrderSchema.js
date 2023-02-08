@@ -3,11 +3,13 @@ import mongoose from "mongoose";
 mongoose.Promise = global.Promise;
 
 const OrderSchema = new mongoose.Schema({
-  product: {
-    type: mongoose.SchemaTypes.ObjectId,
-    ref: "Cart",
-    required: [true, "Cart is required"],
-  },
+  product: [
+    {
+      type: mongoose.SchemaTypes.ObjectId,
+      ref: "Cart",
+      required: [true, "Cart is required"],
+    },
+  ],
   name: {
     type: String,
     required: [true, "Field cannot be empty"],

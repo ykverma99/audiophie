@@ -32,6 +32,30 @@ const page = ({ params }) => {
     setcount(val);
   };
 
+  const addCart = async () => {
+    const inputs = {
+      productId: data?.data._id,
+      quantity: count,
+    };
+    const resData = JSON.stringify(inputs);
+    try {
+      const res = await fetch("http://localhost:3000/api/cart", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: resData,
+      });
+      if (!res.ok) {
+        console.log("error");
+      }
+      const data = res.json();
+      console.log(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <div className={styles.container}>
       <Product_2
@@ -40,8 +64,8 @@ const page = ({ params }) => {
         para={data?.data.desc}
         price={data?.data.price}
         about={data?.data.about}
-        // subBtn={sub}
         value={getValue}
+        onClick={addCart}
       >
         {data?.data.inBox.map((data) => {
           return (

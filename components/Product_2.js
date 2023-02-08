@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import styles from "./product_2.module.scss";
 import Button from "./Button";
 import { motion } from "framer-motion";
@@ -14,28 +15,27 @@ const Product_2 = ({
   about,
   price,
   value,
-  // subBtn,
+  onClick,
 }) => {
   const [count, setcount] = useState(1);
-  // if (typeof window !== "undefined") {
-  //   localStorage.setItem("qunt", JSON.stringify(count));
-  // }
+
   useEffect(() => {
     value(count);
   }, [count]);
+
+  const pathname = usePathname();
+  console.log(pathname);
+
   function add() {
-    // localStorage.removeItem("quant");
     setcount((prev) => prev + 1);
   }
   function sub() {
-    // localStorage.removeItem("quant");
     if (count <= 1) {
       setcount(1);
     } else {
       setcount((prev) => prev - 1);
     }
   }
-  // console.log(count);
   return (
     <div>
       <motion.div
@@ -69,7 +69,7 @@ const Product_2 = ({
                 +
               </button>
             </div>
-            <Button main={true} href={"/headphones"}>
+            <Button type={true} onClick={onClick} main={true} href={pathname}>
               ADD CART
             </Button>
           </div>

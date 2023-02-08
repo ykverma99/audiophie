@@ -1,0 +1,13 @@
+.pricebox_list{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        letter-spacing: 1.2px;
+        line-height: 24px;
+        color: rgb(113, 113, 113);
+        font-size: 1.1rem;
+
+        &>h3{
+            color: rgba(0, 0, 0, 0.867);
+        }
+}
