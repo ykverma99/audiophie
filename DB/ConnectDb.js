@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose, { mongo } from "mongoose";
 
 export const ConnectDb = async () => {
   mongoose
@@ -9,6 +9,8 @@ export const ConnectDb = async () => {
     .then(() => console.log("connect"))
     .catch((e) => console.log(e));
 };
+
+mongoose.set("strictQuery", false);
 
 require("../models/UserSchema");
 require("../models/CatSchema");
